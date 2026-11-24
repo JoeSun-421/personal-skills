@@ -1,107 +1,107 @@
-# 证据检索与筛选细则
+# Evidence Search and Screening
 
-用于文献检索、baseline 核验、创新审查和资源筛选。目标是留下能改变研究决策的证据，检索数量本身不是完成标准。
+Use for literature searches, baseline verification, novelty reviews, and resource screening. Retain evidence that can change a research decision; search volume is not a completion criterion.
 
-## 1. 建立检索轴
+## 1. Build Search Axes
 
-从用户的问题建立词组，分别查询，不把全部限定词塞进一条检索：
+Derive separate query groups from the user's problem rather than packing every constraint into one query:
 
-| 检索轴 | 需要找到的内容 |
-|---|---|
-| 系统/任务 + 失败条件 | 谁测量了这个失败，在哪些设置成立？ |
-| 问题 + 现有方法 | 主流 baseline、简单替代方案及最强竞争者 |
-| 拟议监督信号/机制 | 不同名字下是否已有相同方案？ |
-| 相邻领域 + 同类问题 | 方法是否已用其他术语解决？迁移还剩什么实质问题？ |
-| 最近论文的引用链与作者项目 | 新版本、后续工作、代码、反例及撤回/勘误 |
-| 实现 + 权重/数据 + 设备 | 核心依赖是否真的可用，目标规模是否能负担？ |
+| Search axis | What to find |
+| --- | --- |
+| System/task + failure conditions | Who measured the failure, and under which settings? |
+| Problem + existing methods | Main baselines, simple alternatives, and strongest competitors |
+| Proposed supervision signal/mechanism | Does the same approach exist under another name? |
+| Adjacent field + similar problem | Has another field solved it using different terminology? What remains substantive in the transfer? |
+| Recent citation chains and author projects | New versions, follow-up work, code, counterexamples, and retractions/corrections |
+| Implementation + weights/data + hardware | Are core dependencies actually available, and is the target scale affordable? |
 
-先用领域更新速度选择近期窗口，例如最近 6–12 个月，再追溯基础工作。不要把年份过滤、关键词命中或某个榜单当作穷尽检索。范围足够的判断是：最近竞争方法已明确、核心差异已逐项比较、关键问题和资源已有依据；后续独立查询主要重复已有近邻时，可收敛并公开缺口。
+Choose a recent window based on the field's pace, such as the last 6–12 months, then trace foundational work. Year filters, keyword matches, and leaderboards do not establish exhaustive coverage. Coverage is sufficient when closest competitors are identified, core differences are compared explicitly, and key problem and resource claims have support. If further independent queries mainly repeat known neighbors, converge and disclose the remaining gaps.
 
-## 2. 来源与版本
+## 2. Sources and Versions
 
-优先读取原始论文正文及补充材料、正式会议/期刊页面、作者项目和官方代码/模型/数据发布。搜索摘要、综述、聚合站、帖子用于找线索，不能单独支撑关键推荐。
+Prefer original papers and supplements, official conference/journal pages, author projects, and official code/model/data releases. Search snippets, surveys, aggregators, and posts are leads; they cannot alone support a key recommendation.
 
-对进入结论的工作保留一条来源记录：
+For each work used in a conclusion, keep a source record:
 
-| 字段 | 内容 |
-|---|---|
-| 标识 | DOI、arXiv ID 或标准化标题 |
-| 书目信息 | 标题、作者、首次发布日期、已读版本及版本日期 |
-| 状态 | 预印本、已发表/已接收、勘误或其他已核实状态 |
-| 直接位置 | 方法章节、实验设置、表/图、附录或仓库路径 |
-| 对应判断 | 哪个问题、限制、机制或资源结论由它支持？ |
-| 实现对应 | 官方/第三方、commit/tag、权重或数据版本；未核验则明示 |
-| 访问程度 | 全文已读、仅部分正文、仅摘要、页面不可达 |
+| Field | Content |
+| --- | --- |
+| Identifier | DOI, arXiv ID, or normalized title |
+| Bibliographic details | Title, authors, first release date, version read, and version date |
+| Status | Preprint, published/accepted, corrected, or another verified status |
+| Direct location | Method section, experimental setup, table/figure, appendix, or repository path |
+| Supported judgment | Which problem, limitation, mechanism, or resource conclusion does it support? |
+| Implementation match | Official/third-party, commit/tag, weights or data version; mark unverified items |
+| Access level | Full text read, partial text, abstract only, or inaccessible |
 
-用稳定标识合并同文不同版本。题名、数值、结论或实现发生变化时保留差异，不混用旧实验与新方法。搜索结果中标注的抓取日期不是论文首次发表日期。没有在官方页面确认接收状态时，不把投稿、OpenReview 讨论或作者简历推断成正式接收。
+Deduplicate versions using stable identifiers. Preserve differences when titles, numbers, conclusions, or implementations change; do not combine old experiments with a new method. A search crawl date is not the paper's first publication date. Do not infer acceptance from submission, OpenReview discussion, or an author's CV without official confirmation.
 
-核对具名方法的模型或系统类型、输入、输出、实际训练对象及优化方式。方法相同与名称相同分别判断。根据领域识别关键差异，例如高层技能调用、文本末端动作和连续动作头会影响机器人方法的可比性。
+Check each named method's model/system type, inputs, outputs, actual training target, and optimization procedure. Assess shared names separately from shared mechanisms. Identify domain-specific differences that affect comparability, such as high-level skill calls, text-based end-effector commands, and continuous action heads in robotics.
 
-## 3. 把来源连接到主张
+## 3. Connect Sources to Claims
 
-关键判断使用以下三类标签，可放在句首、表格证据列或研究卡中：
+Use three evidence labels in prose, tables, or research cards:
 
-- **来源证实：** 原文直接测量或明确说明。仍需注明这是作者自报还是已有独立复现，以及适用设置。
-- **研究假设/推断：** 从现象推测原因或提出机制，明确依据和替代解释。
-- **待核实：** 正文、实验条件、实现、版本或访问权限缺失，说明缺口如何影响结论。
+- **Source-confirmed:** Directly measured or explicitly stated in the source. Still identify author-reported versus independently reproduced results and the applicable setting.
+- **Research hypothesis/inference:** A proposed cause or mechanism inferred from observations. State its basis and alternative explanations.
+- **Unverified:** Missing full text, experimental conditions, implementation, version, or access. Explain how the gap affects the conclusion.
 
-“论文报告某方法失效”与“失效由某原因造成”是不同主张；前者可能是事实，后者仍需辨因实验。“作者承认限制”与“我们的方案能解决”也不能合并。
+A paper reporting failure and a claim about its cause are separate statements: the former may be factual while the latter requires a discriminating experiment. An acknowledged limitation and our ability to solve it are also separate claims.
 
-引用直接指向支持该陈述的原文或官方资源，把章节/表图定位与链接一并保留。只读到摘要时可以报告其概要，不得给出全文级机制或负面结论。不可访问的来源保留待核实状态，不补造作者、日期、表号、数值或引用。
+Link directly to the supporting original text or official resource, retaining section/table/figure locations. Abstract-only access permits an abstract-level summary, not detailed mechanistic or negative conclusions. Keep inaccessible sources unverified; never invent authors, dates, table numbers, values, or citations.
 
-## 4. Baseline 公平性
+## 4. Baseline Fairness
 
-为每个候选区分三层参照：主要可运行 baseline、最强相关方法、最低成本替代方案。方法对比需要记录：
+Distinguish the main runnable baseline, strongest related method, and cheapest alternative. Record:
 
-- 数据来源、训练覆盖、划分、标签/专家干预与评测时可见信息；
-- 模型与预训练权重、训练/推理预算、模型调用、调参与选择预算；
-- 环境/任务版本、终止条件、指标定义和失败/缺失结果的处理；
-- 复现来源、已跑范围、与原论文配置的偏离及影响。
+- Data sources, training coverage, splits, labels/expert intervention, and information available at evaluation.
+- Models and pretrained weights, training/inference budgets, model calls, and tuning/selection budgets.
+- Environment/task versions, termination conditions, metric definitions, and treatment of failed or missing results.
+- Reproduction sources, executed scope, deviations from the paper's configuration, and their implications.
 
-控制新增数据、计算、模型规模和调参等混淆。新方法若必须增加成本，就同时报告收益—成本关系，不能悄悄给 baseline 更小预算。用相同额外数据/计算的简单替代方法检验“机制贡献”。
+Control confounds from added data, computation, model size, and tuning. If the proposal requires more resources, report the benefit–cost relationship rather than silently giving baselines smaller budgets. Test mechanistic contributions against simple alternatives using the same extra data or compute.
 
-官方协议与新研究设置分开报告；改过任务上限、输入、成功判据或训练覆盖后，不继续沿用旧分数的含义。zero-shot、少样本适配、已在基准上微调的模型分别定义。数据按能泄漏的信息单位划分，如对象、主体、任务族、原始轨迹/分支或初始条件，而不只随机拆帧。
+Report official protocols separately from new research settings. Changing task limits, inputs, success criteria, or training coverage changes the meaning of a score. Distinguish zero-shot evaluation, few-shot adaptation, and benchmark fine-tuning. Split by leakage units such as objects, subjects, task families, source trajectories/branches, or initial conditions, rather than randomly splitting frames alone.
 
-没有最强方法代码时可公平重建，但需披露实现差异；不能只和弱方法比较后宣称超过全部相关工作。理论候选同样要对齐假设、问题类别、复杂度与现有界。
+If code for the strongest method is unavailable, a fair reconstruction is possible with implementation differences disclosed. Comparing only with weak methods cannot establish superiority over all related work. For theoretical candidates, align assumptions, problem classes, complexity, and existing bounds.
 
-## 5. 新颖性差异表
+## 5. Novelty Comparison
 
-对最接近的少量工作制作：
+For the few closest works, build:
 
-| 最近工作与版本 | 输入、输出与可用信息 | 训练对象、监督及机制 | 已覆盖的问题和证据 | 本方案改进点与判别实验 |
-|---|---|---|---|---|
+| Closest work and version | Inputs, outputs, and available information | Training target, supervision, and mechanism | Covered problem and evidence | Proposed difference and decisive test |
+| --- | --- | --- | --- | --- |
 
-去掉自创名字后重新检索机制描述；检查同义术语、作者后续工作、引用/被引及相邻领域。比较的是问题、假设/监督、机制和结论，不只是模块名称。
+Search again using the mechanism description without invented names. Check synonyms, author follow-ups, references/citations, and adjacent fields. Compare problems, assumptions/supervision, mechanisms, and conclusions rather than module names alone.
 
-覆盖判断可以是“核心已覆盖”“有意义的边界待验证”“证据不足”。核心机制已有先例时，停止以该机制首次提出作为贡献的主张。应用或复现目标仍按用户需要判断价值。调整后的边界需要重新查重，说明是否揭示不同失败机制、评价缺口或有意义的性能边界。
+Coverage judgments may be "core already covered," "meaningful boundary remains untested," or "insufficient evidence." If the core mechanism has a precedent, stop claiming its first introduction as the contribution. Application and reproduction goals can still have value. Recheck revised boundaries and explain whether they reveal a different failure mechanism, evaluation gap, or meaningful performance boundary.
 
-可接受表述：“截至检索日期，在这些检索轴和已读近邻中，未发现直接覆盖此核心主张的工作；这些来源/范围仍未核验。”不可把它写成全球无撞题证明。
+A defensible statement is: "As of the search date, these queries and reviewed neighbors did not reveal work directly covering this core claim; the following sources or areas remain unchecked." This is not proof of global novelty.
 
-## 6. 资源核验
+## 6. Resource Verification
 
-为关键依赖列出：来源/版本、许可证或使用条件、资源状态、预算依据、替代路径。资源状态必须区分：
+For key dependencies, list source/version, license or usage conditions, resource status, budget basis, and alternatives. Separate:
 
-1. **公开存在：** 有正式发布或仓库，不表示权重/数据可下载。
-2. **用户可访问：** 已确认当前用户可获取相关文件或授权；能看模型卡不等于有权下载权重。
-3. **已运行验证：** 有命令、环境、日志和实际结果，说明验证的是接口、短运行还是目标规模。
+1. **Publicly listed:** An official release or repository exists; weights/data may still be unavailable.
+2. **Accessible to the user:** The current user can obtain the files or authorization. Reading a model card does not establish weight access.
+3. **Verified by execution:** Commands, environment, logs, and actual results exist. State whether these cover an interface, short run, or target scale.
 
-可行性估算注意：
+For feasibility estimates:
 
-- 按实际设备与可用显存估算，不能由 GPU 型号推断其容量。经授权可做只读硬件核验。
-- 推理、LoRA/局部训练、全参数训练分别核验；只算权重大小不足以覆盖激活、优化器、缓存、额外模型和环境开销。
-- 明确数据规模、标注来源、访问门槛、磁盘/内存、软件兼容性和运行时间；时间是文献实测、当前实测还是估计要分开。
-- 少量样本、几个更新或一次加载通过，只证明对应范围，不证明完整训练或跨任务结论。
-- 关键资源未知就条件性保留；确认不可获得且无合适替代才淘汰。不能用免费路径的假定成本掩盖实际付费或授权依赖。
+- Use actual devices and available GPU memory; do not infer capacity from a GPU model name. Perform read-only hardware checks when authorized.
+- Assess inference, LoRA/partial training, and full fine-tuning separately. Weight size alone omits activations, optimizers, caches, extra models, and environment overhead.
+- Identify data scale, annotation sources, access barriers, disk/RAM, software compatibility, and runtime. Separate literature measurements, current measurements, and estimates.
+- A few samples, updates, or a successful load establish only that scope, not full training or cross-task performance.
+- Retain a proposal conditionally when key resources are unknown. Reject it for resources only after confirming that dependencies are unavailable and suitable alternatives do not exist. Do not hide paid or permissioned dependencies behind assumed free access.
 
-## 7. 按目标检查研究依据
+## 7. Check Research Grounds Against the Goal
 
-| 门槛 | 通过证据 | 暂缓/淘汰原因 |
-|---|---|---|
-| 问题成立 | 具体失败、理论限制或有依据的待检验观察，且后果重要 | 空泛口号、虚构痛点或缺少问题解释 |
-| baseline 可比较 | 明确改善空间、可运行/可重建参照、公平设置 | 只选弱对照、设定不一致、无法比较 |
-| 基础工作可支撑 | 方法、理论、数据、平台能接成实施路线 | 只有标题列表或无关拼接 |
-| 资源可实现 | 必要依赖可得，目标规模与用户预算相符 | 关键资源未知则暂缓；不可得且无替代则淘汰 |
-| 贡献与目标一致 | 方法论文有实质差异，应用或复现有明确价值，公开检索边界 | 方法主张已覆盖，或应用目标缺少实际收益 |
-| 假设可检验 | 实验/分析能区分机制与其他解释，有成败判据 | 无法归因，或任何结果都被解释成成功 |
+| Criterion | Supporting evidence | Reason to defer or reject |
+| --- | --- | --- |
+| Problem is real | Specific failures, theoretical limitations, or supported observations to test, with meaningful consequences | Vague slogans, invented pain points, or no explanation of the problem |
+| Baselines are comparable | Clear improvement opportunity, runnable/reconstructable references, fair settings | Weak controls, mismatched settings, or no meaningful comparison |
+| Foundations support execution | Methods, theory, data, and platforms form an implementation path | A title list or unrelated components |
+| Resources are feasible | Necessary dependencies are available and target scale fits the user's budget | Defer unknown dependencies; reject unavailable dependencies without alternatives |
+| Contribution fits the goal | A substantive methodological difference, or clear application/reproduction value, with search boundaries disclosed | Method claim already covered, or no practical benefit for an application goal |
+| Hypothesis is testable | Experiments/analysis distinguish the mechanism from alternatives and define success/failure | No attribution possible, or every result is called a success |
 
-逐项记录依据、缺口与状态，不用加权总分抵消关键缺口。高风险研究可以条件性保留，明确价值、关键未知与可承受的先导成本。缺少新方法差异会改变论文贡献判断，已有方法仍可满足应用或复现目标。
+Record evidence, gaps, and status for each criterion. Do not use a weighted score to cancel critical gaps. Retain high-risk research conditionally when its value, unknowns, and affordable pilot cost are explicit. A missing methodological difference affects a paper's contribution claim; an existing method may still satisfy application or reproduction goals.

@@ -1,56 +1,56 @@
 # User Alignment
 
-本记录用于约束研究执行，放进当前报告或任务记录即可。根据复杂度选取必要字段，避免产生重复文档。
+Use this record to guide research execution within the current report or task notes. Select necessary fields based on complexity and avoid duplicate documents.
 
 ## Request Record
 
 | Field | Record |
 | --- | --- |
-| Research question | 用户要验证的关系或判断，尽量保留原话。 |
-| Target setting | 系统、输入输出、部署条件、任务难度及泛化目标。 |
-| Chosen mechanism | 用户已选择的论文、算法、公式和不可替换的设计。 |
-| Success evidence | 哪些观测或比较能支持目标，哪些结果会否定它。 |
-| Deliverable | 本次要求调研、解释、设计、编辑、实现、测量或完整实验中的哪些。 |
-| Resources and authorization | 用户明确的预算、允许执行的动作、输出目录和外部保存目的地。 |
-| Assumptions and unknowns | 推断的内容、影响结论的未知项，以及获取依据的方法。 |
+| Research question | Relationship or judgment to test, preserving the user's wording where possible. |
+| Target setting | System, inputs/outputs, deployment conditions, task difficulty, and generalization target. |
+| Chosen mechanism | Papers, algorithms, equations, and non-substitutable designs selected by the user. |
+| Success evidence | Observations or comparisons that support the goal, and outcomes that refute it. |
+| Deliverable | Which of research, explanation, design, editing, implementation, measurement, or full experimentation is requested now. |
+| Resources and authorization | Explicit budget, permitted actions, output directory, and external saving destinations. |
+| Assumptions and unknowns | Inferences, consequential unknowns, and how to obtain evidence. |
 
-具名方法存在歧义时先定位原文和核心运算。无法从来源消除的歧义再向用户澄清。用户已经明确选择后，不再反复重开常规决定。
+Resolve ambiguity in a named method by locating the original text and core computation first. Ask the user only when sources cannot resolve a consequential ambiguity. Do not repeatedly reopen routine decisions after an explicit user choice.
 
 ## Change Control
 
-- 收到纠正后，记录从哪个假设或设计改成什么，以及影响哪些公式、代码、对照和结论。工作基于最新有效需求。
-- 保留用户关心的差异。需要更换模型、输入、接口、训练目标或任务范围时，说明它回答的问题和与原目标的关系。
-- 给出新建议与采用新建议是两个状态。用户要求评价时完成评价，用户要求修改或实现时完成对应动作。
-- 可逆实现细节可以自主处理。影响研究假设或结论的替代需标为建议或条件性方案，并按已有授权决定是否采用。
-- 环境搭建服务于研究风险核验。具名方法的迁移分析不能被“运行同名模型”代替。接口探针不能代替训练效果或闭环任务验证。
-- 用户暂停、取消或切换任务时，核对自己启动的后台作业，按当前指令停止、保留或交接，报告已消耗资源和可恢复状态。
+- On correction, record which assumption or design changes, and the affected equations, code, controls, and conclusions. Continue from the latest valid requirements.
+- Preserve distinctions the user cares about. When substituting a model, input, interface, training objective, or task scope, explain what question it answers and how it relates to the original goal.
+- Recommending an alternative and adopting it are different states. Complete an evaluation when asked to evaluate; complete the edit or implementation when asked to change or implement.
+- Handle reversible implementation details autonomously. Label substitutions affecting the hypothesis or conclusion as recommendations or conditional plans, and adopt them only within existing authorization.
+- Environment setup serves research-risk verification. Running a model with the same name cannot replace analysis of a method's transfer. Interface probes cannot replace training results or closed-loop task validation.
+- When the user pauses, cancels, or switches tasks, check background jobs you started. Stop, preserve, or hand them off as directed, reporting consumed resources and recoverable state.
 
 ## Research Notes and Formulas
 
-保留作者的原话、语气、中英混用和表达习惯。用户要求结构优化时调整必要的结构，涉及原意的技术修正单独说明依据。避免把随手笔记整体改成论文口吻。
+Preserve the author's wording, tone, mixed-language usage, and expression. Make only necessary structural changes when asked to improve organization, and separately explain evidence for technical corrections affecting meaning. Do not rewrite informal notes wholesale into paper prose.
 
-符号表和正文共用一套索引。检查以下对应关系：
+Use one consistent index system across notation tables and prose. Check:
 
-1. 每个变量首次出现有含义、获取方式和统计单位。
-2. 同名符号跨公式含义一致，轨迹、节点、轮次和 token 索引各有对应。
-3. 每项奖励能由真实日志或判定器计算，训练与评测成功标记明确。
-4. 对照组以同一总式展开，逐项说明启用的信号。用户选择一种形式时，其他形式只在必要的 related work 说明中出现。
-5. 最终优化确实使用前面定义的信号。强化学习场景核查回报、组内统计、优势和策略更新之间的传递。
+1. Every variable has a meaning, acquisition method, and statistical unit at first use.
+2. Symbols keep their meaning across equations; trajectory, node, round, and token indices correspond consistently.
+3. Every reward can be computed from real logs or a judge, with explicit training and evaluation success labels.
+4. Expand controls from the same total objective, identifying enabled signals term by term. When the user chooses one form, include alternatives only where needed to explain related work.
+5. Final optimization actually uses the defined signals. In reinforcement learning, trace returns, within-group statistics, advantages, and policy updates.
 
-公式只引用确实支持该形式的来源，逐项注明自己的改动。经验上合理的选择写为待验证设计，避免标成原论文结论。
+Cite only sources that support the equation's actual form and identify each modification. Mark empirically plausible choices as designs to test, not original-paper conclusions.
 
 ## Completion Check
 
-把本次要求列为“要求、实际交付、证据位置、剩余缺口”。准备结束时回到研究问题检查当前证据是否足够。
+Map the request to requirements, actual deliverables, evidence locations, and remaining gaps. Before finishing, return to the research question and check whether the evidence suffices.
 
-小任务使用一句话或短表即可。结果、日志、实现、版本与论文分别提供各自范围的证据。发现偏离时先修正，再继续推进。
+For small tasks, a sentence or short table is enough. Results, logs, implementations, versions, and papers each support their own scope. Correct drift before continuing.
 
 ## Typical Failure Cases
 
 | User request | Required behavior |
 | --- | --- |
-| “论文 M 的方法能否用于系统 X，可以搭环境验证。” | 先把 M 的机制映射到 X，确定迁移风险。再做对应资源或接口验证，明确效果仍待训练。 |
-| “保留节点级相对长度奖励，只留一个长度公式。” | 主方案沿用节点比较范围和所选公式，对照逐项加奖励。其他长度形式放在相关工作解释中。 |
-| “按这个版本写进去，别改我的习惯。” | 读取当前版本，最小范围编辑，保留原文，并验证实际保存结果。 |
-| “先调研，预算未定。” | 完成来源核验、差异和条件性实验方案。资源未知不妨碍独立的研究判断。 |
-| “我只想复现或用于自己的系统。” | 以正确复现或任务价值判断收益，说明已有方法可以如何使用。 |
+| "Can paper M's method work for system X? You may set up an environment to check." | Map M's mechanism to X and identify transfer risks first. Then verify relevant resources or interfaces, explicitly leaving effectiveness pending training. |
+| "Keep the node-relative length reward and only one length formula." | Retain the node comparison scope and chosen formula in the main proposal, adding rewards to controls term by term. Put other length forms in related-work explanations. |
+| "Write this version in without changing my style." | Read the current version, edit minimally, preserve expression, and verify the saved result. |
+| "Research first; the budget is undecided." | Complete source checks, differences, and a conditional experiment plan. Unknown resources do not prevent independent research assessment. |
+| "I only want to reproduce it or use it in my system." | Judge by reproduction correctness or task value and explain how existing methods can be used. |

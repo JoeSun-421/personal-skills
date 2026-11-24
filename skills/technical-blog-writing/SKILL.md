@@ -1,47 +1,47 @@
 ---
 name: technical-blog-writing
-description: 将论文、数学方法和实验写成简洁清晰的技术博客、论文解读或组会记录，核对原始来源、图示和公式渲染。适用于文章写作与重写，不用于普通聊天答疑或直接部署网站。
+description: Turn papers, mathematical methods, and experiments into concise technical blog posts, paper explainers, or research meeting notes, checking original sources, figures, and equation rendering. Use for article writing and rewriting, not ordinary chat answers or direct website deployment.
 ---
 
 # Technical Blog Writing
 
-让读者能够复述问题、方法为何成立，以及证据支持到哪里。压缩冗余，保留必要推导与因果连接。
+Help readers explain the problem, why the method works, and how far the evidence reaches. Remove redundancy while retaining necessary derivations and causal connections.
 
 ## Argument before Structure
 
-先确定读者需要理解的一个问题和文章的核心判断，再选择材料。背景在用到时补充，避免先堆领域名词和论文目录。
+Identify the one question readers need to understand and the article's central judgment before selecting material. Introduce background when needed rather than opening with a collection of terminology and paper titles.
 
-常用顺序是具体困难、核心想法、必要机制、证据和适用边界、迁移。按内容调整，不固定篇幅或章节数量。改写时保留有用结论与来源，把重复推导、通用算法手册和实现清单移到链接的详细笔记。
+A useful progression is concrete difficulty, core idea, necessary mechanism, evidence and limits, then transfer. Adapt to the material without fixed length or section counts. When rewriting, retain useful conclusions and sources, moving repeated derivations, general algorithm manuals, and implementation inventories into linked detailed notes.
 
-正文不出现用户指令、执行计划、自检结果和写作过程评价。影响结论的限制写在相关结论旁边，工具访问缺口留在维护记录或交付说明。
+Keep user instructions, execution plans, self-check results, and commentary about the writing process out of the article. Place limitations beside the conclusions they affect. Put tool-access gaps in maintenance records or delivery notes.
 
 ## Make the Mechanism Legible
 
-- 每节推进一个判断，说明它与上一节的关系。先给可理解的情境，再引入处理它所需的术语。
-- 同名异义先分清，例如长短文本模式和文本／连续 latent 切换。比较方法时围绕相同问题，明确输入、输出、监督和优化对象。
-- 公式之前交代它解决哪一步，之后解释新增项为何出现。统一外部轮次、内部 token 和轨迹索引，变量首次出现就给含义及获取方式。
-- 保留能改变读者判断的推导与数值例子。完整训练脚本、庞大符号表和通用背景仅在读者确实需要时展开。
-- 自然区分原论文结果、自己的推导、教学例子和迁移设想。一个未运行的设计不写成已具备的能力。
-- 不用设问后自行回答，不用“不是……而是……”等纠正式句型推动叙述。删除没有信息增量的套话、反复免责声明和结尾口号。
+- Advance one judgment per section and explain its relationship to the preceding section. Establish an understandable situation before introducing the terminology needed to address it.
+- Resolve shared names with different meanings, such as short/long text modes versus text/continuous-latent switching. Compare methods around the same problem, specifying inputs, outputs, supervision, and optimization targets.
+- Before an equation, explain which step it solves; afterward, explain why each new term appears. Keep outer-round, inner-token, and trajectory indices consistent. Define each variable's meaning and acquisition method at first use.
+- Retain derivations and numerical examples that can change a reader's judgment. Expand full training scripts, large notation tables, and general background only when readers actually need them.
+- Naturally distinguish original-paper results, your own derivations, teaching examples, and transfer proposals. Do not describe an unexecuted design as an established capability.
+- Avoid posing questions only to answer them and corrective constructions such as "not X, but Y." Remove empty transitions, repeated disclaimers, and closing slogans.
 
 ## Evidence and Figures
 
-优先核对原论文、固定版本与官方实现。引用靠近主张，给必要章节或式号。论文与代码有差异时分别描述，不以摘要、标题或演示替代训练细节。
+Check original papers, fixed versions, and official implementations first. Keep citations near claims, including section or equation numbers when needed. Describe paper/code differences separately; abstracts, titles, and demonstrations cannot establish training details.
 
-先告诉读者图中该看哪条关系，再用图推进解释。原图保留本地素材、图号、作者、版本、出处和许可；裁去无关正文，保留标签、坐标和图例。图不是装饰，也不代替实验对照。
+Tell readers which relationship to inspect in a figure before using it to advance the explanation. For source figures, preserve local assets, figure numbers, authors, versions, provenance, and license information. Crop unrelated text while retaining labels, axes, and legends. Figures should serve the argument and cannot replace experimental controls.
 
-参考写作时按需读 [editorial-patterns.md](references/editorial-patterns.md)。学习信息组织，避免复制口吻、标志性措辞或整段文字。为当前文章选择适合的做法，不把所有参考风格机械叠加。
+Read [editorial-patterns.md](references/editorial-patterns.md) as needed when using writing references. Learn how information is organized without copying voice, signature phrasing, or paragraphs. Choose techniques suited to the current article rather than mechanically combining every reference style.
 
 ## Markdown to Blog
 
-正文、图资源与来源说明分别保存，使用稳定相对路径。需要站点迁移时使用中性的 title、date、description、tags 等元数据，不把写 Markdown 扩大为自动发布或修改站点。
+Store prose, figure assets, and source notes separately, using stable relative paths. For site transfer, use neutral metadata such as title, date, description, and tags. Writing Markdown does not authorize automatic publication or website changes.
 
-涉及公式与图片时读 [math-and-assets.md](references/math-and-assets.md)。数学应经过实际 KaTeX／MathJax 渲染并在浏览器检查；LaTeX 配对检查不能单独证明显示正确。长式优先拆成有含义的等式，少用缩小字号。
+Read [math-and-assets.md](references/math-and-assets.md) when equations or figures are involved. Render mathematics with actual KaTeX/MathJax and inspect it in a browser; LaTeX delimiter checks alone do not establish correct display. Prefer splitting long expressions into meaningful equations over reducing font sizes.
 
-完成后独立通读：读者能否沿问题走到方法，图能否解释公式，训练信号能否追踪到参数更新，结论是否超出证据。再核对引用、本地链接、数值例子和渲染结果。
+Read the finished article independently: can readers follow the problem into the method, do figures explain equations, can training signals be traced to parameter updates, and do conclusions stay within evidence? Then verify citations, local links, numerical examples, and rendering.
 
 ## Meeting Notes
 
-组会记录先交代实际主题、材料与进展，再写关键讨论、确定结论和待验证问题。将论文声称、本组观察和新设想分开。
+Start meeting notes with the actual topic, materials, and progress, followed by key discussion, decisions, and open questions. Separate paper claims, the group's observations, and new proposals.
 
-只记录确实提供的责任人、截止时间、实验结果和决策，缺失时省略相关字段。记录可链接博客中的背景和机制，避免每次复制完整推导。
+Record owners, deadlines, experimental results, and decisions only when actually supplied; omit missing fields. Link to background and mechanisms in blog posts rather than copying full derivations into every meeting record.

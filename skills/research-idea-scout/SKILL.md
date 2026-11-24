@@ -1,89 +1,89 @@
 ---
 name: research-idea-scout
-description: "按科研流程审查研究问题、检索最近工作、选择 baseline、设计可证伪实验，并依据证据改进方案和决定继续或停止。用于选题、方法迁移、实验设计及研究复盘，持续对齐用户的研究对象、机制、预算和交付要求。单篇论文解释与单纯文献下载沿用各自工作流。"
+description: "Assess research questions, search recent work, select baselines, design falsifiable experiments, and use evidence to refine proposals and decide whether to continue. Use for topic selection, method transfer, experimental design, and research reviews while respecting the user's target, mechanism, budget, and deliverables. Use separate workflows for explaining a single paper or simply downloading literature."
 ---
 
 # Research Workflow
 
-让研究决策可以追溯到用户的问题、已有证据和能够推翻假设的实验。默认中文，领域、方法、预算和写作格式沿用当前用户要求。保留本 skill 的原调用名。
+Make research decisions traceable to the user's question, existing evidence, and experiments that could refute the hypothesis. Use Chinese by default unless the user requests another language. Follow the current request for domain, method, budget, and writing format. Preserve this skill's original invocation name.
 
 ## Start with the Research Request
 
-先用几句话明确用户的研究问题、希望验证的假设、目标系统及本次交付。已有明确方案时深入该方案，用户要求找方向时再比较候选。
+Briefly establish the research question, hypothesis to test, target system, and current deliverable. Examine an existing proposal in depth when one is specified; compare candidate directions when the user asks to find a direction.
 
-读取 [user-alignment.md](references/user-alignment.md)，建立精简的需求记录。记录用户明确选择、工作假设、待核实项和授权范围。把最新纠正落实到后续公式、代码、实验和结论。
+Read [user-alignment.md](references/user-alignment.md) and keep a compact request record. Distinguish explicit user choices, working assumptions, unknowns, and authorization. Apply the latest corrections throughout subsequent equations, code, experiments, and conclusions.
 
-用户提到具名论文或算法时，先核对其正式来源、版本和核心机制，再决定怎样迁移。判断所选方法能否解决目标问题先于下载模型、搭环境和跑接口。代码与资源验证应回答已识别的技术风险。
+When the user names a paper or algorithm, verify its primary source, version, and core mechanism before deciding how to transfer it. Assess whether the method can solve the target problem before downloading models, setting up environments, or probing APIs. Code and resource checks should address identified technical risks.
 
-按用户当前阶段选择工作深度。研究提炼可停在有证据的实验设计。用户已授权实现或实验时，继续完成相应范围的构建、运行、诊断和复核。关键资源未知时可以完成独立分析，给出条件性结论。
+Match the depth of work to the user's current stage. Research exploration may end with an evidence-backed experimental design. When implementation or experiments are authorized, complete the corresponding setup, execution, diagnosis, and verification. If key resources remain unknown, complete independent analysis and state conditional conclusions.
 
 ## Establish That the Problem Matters
 
-将问题表述为具体系统在明确条件下发生的可测失败，并写清受影响的人、任务或成本。记录现象来源及适用范围。
+Describe a measurable failure of a specific system under explicit conditions, including the affected people, tasks, or costs. Record the source of the observation and its scope.
 
-- 区分观察到的失败与推测的原因，为原因列出竞争解释。
-- 核对官方运行协议、实现、初始化和预算，排查配置偏差造成的假问题。
-- 结合研究目的判断价值。方法创新、应用迁移、评测发现、可靠性测量和复现研究可以各自成立。
-- 给出可观测的改善目标，例如同等质量下降低成本，或在固定预算下提升任务完成率。指标和允许退化范围来自任务要求或先导测量。
+- Separate observed failures from proposed causes, and list competing explanations.
+- Check official protocols, implementations, initialization, and budgets to rule out problems caused by configuration differences.
+- Assess value against the research goal. Method innovation, application transfer, evaluation findings, reliability measurement, and reproduction can each be worthwhile.
+- Define an observable improvement, such as lower cost at equal quality or higher task completion under a fixed budget. Derive metrics and acceptable regressions from task requirements or pilot measurements.
 
 ## Find the Closest Work and Baselines
 
-检索、来源核对和研究价值判断时读取 [evidence-and-screening.md](references/evidence-and-screening.md)。
+Read [evidence-and-screening.md](references/evidence-and-screening.md) when searching, checking sources, or assessing research value.
 
-并行建立问题证据、可运行基础工作、最近竞争方法和负面证据。沿引用、被引、作者后续工作及同义机制扩展，记录检索日期、代表性检索式和访问缺口。
+Develop evidence for the problem, runnable foundations, closest competing methods, and negative findings alongside one another. Expand through references, citations, authors' follow-up work, and synonymous mechanisms. Record the search date, representative queries, and access gaps.
 
-为影响结论的少量近邻比较问题、输入与部署信息、输出接口、监督与训练方式、核心机制、评测条件。找到最接近的机制先例，再陈述候选剩余的可测差异。
+For the few closest works that affect the decision, compare the problem, inputs and information available at deployment, output interface, supervision and training, core mechanism, and evaluation conditions. Identify the closest mechanistic precedent before stating the remaining measurable difference.
 
-Baseline 以所要回答的问题为准，通常需要主系统、最强可公平比较的近邻、以及能解释同样收益的简单替代方案。明确各自角色、可运行性、协议差异和选择理由。仅名称或数据集相近不足以进入关键比较。
+Choose baselines for the question being answered. Usually include the main system, the strongest fairly comparable neighbor, and a simple alternative that might explain the same gains. State each one's role, availability, protocol differences, and selection rationale. Similar names or datasets alone do not justify a central comparison.
 
 ## Form a Falsifiable Mechanism
 
-用一条完整链条连接方案：
+Connect the proposal through a complete chain:
 
-**失败现象 → 原因假设 → 改动位置 → 新增信号或计算 → 预期行为变化 → 可观测结果。**
+**Observed failure → causal hypothesis → intervention point → added signal or computation → predicted behavior change → observable outcome.**
 
-为每个实质改动说明相对 baseline 改了什么、沿用了什么、付出什么额外代价，及在哪些条件下可能无效。选择最能区分竞争解释的改动，避免把模块堆叠当作贡献。
+For every substantial change, explain what differs from the baseline, what is retained, what extra cost it adds, and when it might fail. Choose changes that best distinguish competing explanations; stacking modules is not itself a contribution.
 
-用户指定的机制作为当前方案基础。有证据表明它不可行或已被覆盖时，展示具体依据和可选修正，明确标记方案变更。用户尚未选择的替代路线保留为建议。
+Use the user's chosen mechanism as the basis of the current proposal. If evidence shows it is infeasible or already covered, present the specific evidence and possible revisions, and clearly mark proposal changes. Alternatives the user has not chosen remain recommendations.
 
-含公式时使用统一符号，定义输入、统计范围、计算顺序和边界情况。优化目标、训练信号、优势或损失和评测指标之间应能逐项对应。每个借鉴公式给出处和具体改写。
+Use consistent notation in equations. Define inputs, statistical scope, computation order, and boundary cases. Optimization objectives, training signals, advantages or losses, and evaluation metrics should correspond explicitly. Cite each borrowed equation and identify the exact modifications.
 
 ## Design the Smallest Decisive Experiment
 
-设计或执行实验时读取 [experiment-design.md](references/experiment-design.md)。
+Read [experiment-design.md](references/experiment-design.md) when designing or running experiments.
 
-从一个可以被推翻的主张出发，先设计最小判别实验，再按结果决定是否扩大规模。为每个比较写明唯一想隔离的因素、主要指标、预算口径、预期现象和反例结果。
+Start with a refutable claim and the smallest experiment that distinguishes explanations. Let its result determine whether to scale up. For each comparison, state the single factor to isolate, primary metric, budget accounting, predicted observation, and refuting outcome.
 
-先导可用于验证协议、发现方差和确定正式样本量。正式实验区分训练、开发与测试，按潜在泄漏单位划分。记录失败、过滤样本、重试及额外模块的成本。
+Use pilots to verify protocols, estimate variance, and determine the formal sample size. Separate training, development, and testing by potential leakage units. Account for failures, filtered samples, retries, and the costs of additional modules.
 
-运行前确定继续、改进、停止或转向的依据。结果出来后优先诊断协议与混淆，再更新机制假设。每次改进都回到同一公平 baseline 检验，保留负面结果及调参轨迹。
+Set criteria for continuing, improving, stopping, or changing direction before running. After results arrive, diagnose protocol issues and confounds before updating the mechanism hypothesis. Test every revision against the same fair baseline, retaining negative results and tuning history.
 
 ## Verify Resources and Execute Within Scope
 
-资源依次记录为公开存在、用户可访问、已运行验证，并标明验证覆盖的范围。
+Record resources at three distinct evidence levels: publicly listed, accessible to the user, and verified by execution. State the scope of each verification.
 
-核查模型、数据、代码、许可证、环境版本、设备、显存、磁盘和运行时间。分别核算推理、参数高效训练和全参数训练，计入激活、优化器、缓存、采样与验证器。
+Check models, data, code, licenses, environment versions, devices, GPU memory, disk, and runtime. Account separately for inference, parameter-efficient training, and full fine-tuning, including activations, optimizers, caches, sampling, and verifiers.
 
-资源探针验证所需接口、资源峰值或训练链路。若探针只覆盖单步前向，其结论就限定于单步前向。替代模型、量化、特权状态或更短任务均记为实验条件，核对是否仍回答原问题。
+Resource probes should verify the required interface, peak usage, or training path. If a probe covers only one forward pass, limit the conclusion accordingly. Treat substitute models, quantization, privileged state, and shorter tasks as experimental conditions, and check whether they still answer the original question.
 
-根据当前有效授权搭建和执行。使用项目约定目录，保存可复现命令、版本、随机种子及结果证据。外部保存目的地、昂贵服务或新增长期作业按用户授权处理。
+Build and execute within the current authorization. Use project conventions for directories, and preserve reproducible commands, versions, seeds, and result evidence. Handle external saving destinations, expensive services, and new persistent jobs according to the user's authorization.
 
 ## Assess and Improve
 
-分别判断研究价值、与最近工作的差异、资源可行性和证据强度。以对应目标决定投入，不把某项优势抵消关键缺口。
+Assess research value, differences from the closest work, resource feasibility, and evidence strength separately. Decide investment against the corresponding goal; strengths in one area cannot cancel a critical gap elsewhere.
 
-| Decision | Required Reason |
+| Decision | Required reason |
 | --- | --- |
-| 推荐验证 | 问题有依据，baseline 可比较，关键资源和判别实验成立。列明尚待实验证实的机制。 |
-| 条件性保留 | 写明缺失证据或依赖，以及补齐后如何改变决策。 |
-| 停止或转向 | 给出核心主张已覆盖、主要假设被否定、价值不足或资源不匹配的证据。区分停止当前机制与停止整个问题。 |
+| Recommend validation | The problem is supported, baselines are comparable, and key resources and a decisive experiment are viable. State which mechanisms still require experimental confirmation. |
+| Retain conditionally | Identify missing evidence or dependencies and explain how resolving them would change the decision. |
+| Stop or redirect | Show evidence that the core claim is covered, a key hypothesis is refuted, value is insufficient, or resources do not fit. Distinguish stopping this mechanism from abandoning the whole problem. |
 
-比较结果时同时报告效果、成本、退化条件与不确定性。结论只覆盖实际任务、模型、数据和预算。已有方法能支撑应用目标时，说明复用价值。论文方法贡献要求另有可检验差异。
+Report effectiveness, cost, regression conditions, and uncertainty together. Limit conclusions to the tasks, models, data, and budgets actually covered. If an existing method supports an application goal, explain its reuse value. A methodological paper needs an additional testable difference.
 
 ## Deliver and Audit
 
-交付时读取 [report-template.md](references/report-template.md)，只选择本次需要的内容。核心结论应回答问题是否值得做、具体改进什么、已有工作覆盖到哪、怎样公平验证，以及当前证据支持到哪。
+Read [report-template.md](references/report-template.md) for delivery, selecting only the sections needed now. The core conclusion should answer whether the problem is worth pursuing, what specifically changes, what prior work already covers, how to test fairly, and how far current evidence reaches.
 
-遵守用户的原话、写作习惯、语言、公式和文件目的地要求。编辑已有方案采用满足任务的最小修改，并读回验证。
+Respect the user's wording, writing habits, language, equations, and file destinations. Make the smallest changes that satisfy a request to edit an existing proposal, then read back and verify.
 
-完成前将用户要求逐项映射到证据，检查需求是否漂移、近邻是否准确、方法与实验是否对应、资源核验是否达到所声称范围。未满足的部分列明阻碍和已完成范围，继续可授权完成的工作。
+Before finishing, map user requirements to evidence. Check for requirement drift, accurate nearest-work comparisons, alignment between method and experiments, and resource claims that match the verification performed. Identify blockers and completed scope for unmet requirements, and continue work that remains authorized and feasible.

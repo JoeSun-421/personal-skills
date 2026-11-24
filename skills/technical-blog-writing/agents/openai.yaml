@@ -1,4 +1,4 @@
 interface:
   display_name: "Technical Blog Writing"
-  short_description: "把论文、推导和实验写成清晰的技术博客与组会记录，核对来源、图示和公式渲染"
+  short_description: "Write clear research posts with verified figures and equations"
   default_prompt: "Use $technical-blog-writing to explain this research clearly and verify its figures and equations."

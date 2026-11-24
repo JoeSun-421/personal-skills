@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Workspace"
+  short_description: "Organize research workspaces, experiments, and writing"
+  default_prompt: "Use $workspace to set up and maintain my research workspace, from papers and isolated environments to experiments, weekly reports, and blog posts."
