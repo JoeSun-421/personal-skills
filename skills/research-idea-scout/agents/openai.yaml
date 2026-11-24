@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Workflow"
+  short_description: "按用户需求核验研究价值与近邻工作，设计公平实验并依据结果改进方案"
+  default_prompt: "使用 $research-idea-scout，按我的研究问题和约束核验已有工作与改进点，选择 baseline、设计可证伪实验，并明确继续或停止的证据。"
