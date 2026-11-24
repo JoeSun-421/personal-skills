@@ -8,7 +8,7 @@ Personal agent skills for workspace organization, research, and technical writin
 | research-idea-scout | Check research questions, closest work, and baselines; design falsifiable experiments and refine proposals using evidence. | [SKILL.md](skills/research-idea-scout/SKILL.md) |
 | technical-blog-writing | Turn papers, equations, and experiments into clear technical posts and research meeting notes; verify sources, figures, and rendered mathematics. | [SKILL.md](skills/technical-blog-writing/SKILL.md) |
 
-## One-prompt installation for XinAgent
+## One-prompt installation for Agent
 
 Copy the following prompt into XinAgent, or another agent that supports directory-based `SKILL.md` skills and can download and write local files:
 
