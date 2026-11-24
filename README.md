@@ -10,7 +10,7 @@ Personal agent skills for workspace organization, research, and technical writin
 
 ## One-prompt installation for Agent
 
-Copy the following prompt into XinAgent, or another agent that supports directory-based `SKILL.md` skills and can download and write local files:
+Copy the following prompt into Agent, or another agent that supports directory-based `SKILL.md` skills and can download and write local files:
 
 ```text
 Install all skills from https://github.com/JoeSun-421/personal-skills into this agent's supported user-level skills directory.
@@ -26,28 +26,6 @@ Install all skills from https://github.com/JoeSun-421/personal-skills into this 
 Complete the download, installation, and verification within the permissions already available. Do not modify unrelated agent settings or publish anything.
 ```
 
-This repository currently requires authorized GitHub access. A prompt does not grant access to a private repository. Use the agent's existing GitHub connection, SSH key, or credential manager.
-
-### Manual download
-
-With authorized Git access:
-
-```bash
-git clone https://github.com/JoeSun-421/personal-skills.git
-```
-
-Install the individual directories under `personal-skills/skills/` into your agent's documented skills directory. For Codex, use `$CODEX_HOME/skills`, or `~/.codex/skills` when `CODEX_HOME` is unset. Other agents may use a different location.
-
-## Structure
-
-Each subdirectory of `skills/` is a self-contained skill. `SKILL.md` is its entry point, `references/` holds material loaded as needed, and `agents/openai.yaml` provides OpenAI-specific display metadata and a default invocation prompt.
-
-The writing skill's [editorial patterns](skills/technical-blog-writing/references/editorial-patterns.md) draw on specific articles by Physical Intelligence, Jianlin Su, Distill, Lilian Weng, Andrej Karpathy, Jay Alammar, Sebastian Raschka, and Simon Willison. Sources with limited access are identified separately. Learn from their organization of information without imitating an author's voice.
-
-## Usage
-
-After installation, invoke `$workspace`, `$research-idea-scout`, or `$technical-blog-writing` in agents that support this syntax. In other agents, use their documented skill invocation mechanism. When maintaining a skill, keep its entry point and relative references in sync and validate the skill structure again.
-
 Example requests:
 
 ```text
@@ -59,7 +37,3 @@ Use $workspace to draft this week's research report from the workspace's actual 
 
 Use $technical-blog-writing to turn these notes and verified results into a clear blog draft with checked sources, figures, and equations.
 ```
-
-The workspace skill records the user's preference to establish a workspace root first and keep research resources beneath it. It follows existing project layouts, keeps Notion opt-in, and does not move old files or publish drafts automatically. Its sample directory tree and weekly-report structure are defaults for new work, not instructions to rebuild an existing workspace.
-
-This repository contains personally maintained skills. It excludes bundled `.system` skills and plugin caches. Paper PDFs, experiment data, and model weights belong in their research workspaces. Credentials stay in the user's existing credential mechanism and are never committed here.
