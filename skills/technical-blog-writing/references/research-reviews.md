@@ -15,7 +15,7 @@ For a recent-work request, prioritize original release dates and current technic
 
 ## Explain Each Paper as a Recipe
 
-When the user requests paper-by-paper organization, use a consistent progression: the concrete problem, the mechanism and training recipe, then transfer implications. Respect their requested heading language and avoid adding generic tutorials or comparison tables by default.
+When the user requests paper-by-paper organization, use a consistent progression: the concrete problem, the mechanism and training recipe, then transfer implications. Respect their requested heading language and avoid adding generic tutorials or comparison tables by default. When transfer is requested only at the end, keep each paper section on its reported method, training and experiments, and consolidate all target-domain discussion in that final section.
 
 For RL, make this chain reconstructable:
 
