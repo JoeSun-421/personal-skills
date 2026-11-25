@@ -8,6 +8,11 @@ Select papers with distinct contributions and traceable recipes. Treat requested
 
 Keep screened candidates and reasons in a maintenance note. The article should concentrate on the selected papers rather than reproducing the search log. Removing a paper from the article does not authorize deleting its archived PDF or notes.
 
+
+When a review is organized by acceleration mechanism, classify the intervention before choosing representatives: budget or mode allocation before generation, stopping during generation, cross-turn reuse, selective model escalation, or draft/verify execution. Categories can overlap; identify the primary source of savings. Keep training efficiency, deployment compute and wall-clock latency separate.
+
+For a recent-work request, prioritize original release dates and current technical evidence; conference acceptance and optimizer names are secondary unless the user makes them requirements. Select for explicit recipes, matched controls, cost accounting, reproducibility and stated failure boundaries. Do not fill a recent-work list with older preprints solely because their conference year is recent.
+
 ## Explain Each Paper as a Recipe
 
 When the user requests paper-by-paper organization, use a consistent progression: the concrete problem, the mechanism and training recipe, then transfer implications. Respect their requested heading language and avoid adding generic tutorials or comparison tables by default.
