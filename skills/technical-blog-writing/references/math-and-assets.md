@@ -20,6 +20,6 @@ Delimiter checks and numerical calculations are supplements. Do not claim verifi
 
 Keep source PDFs unchanged and use stable local relative paths for figure assets. Extract the figure content region, checking that labels are complete and data curves retain axes and legends.
 
-Captions should identify the author, paper, version, and figure number nearby. Asset notes should record the source PDF page, URL, license, cropping, and checksum. Follow the applicable reproduction or adaptation license.
+Honor the requested caption style. For clean original figures, keep existing labels without adding watermarks, source captions, or image hyperlinks. Put paper citations in the text or references, and retain the source PDF page, figure number, URL, license, crop, and checksum in a separate asset record. Follow the applicable reproduction or adaptation license.
 
 Figures may link to full-resolution originals. Avoid whole-page PDF thumbnails and never present generative redraws as original figures.

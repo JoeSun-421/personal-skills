@@ -15,6 +15,8 @@ A useful progression is concrete difficulty, core idea, necessary mechanism, evi
 
 Keep user instructions, execution plans, self-check results, and commentary about the writing process out of the article. Place limitations beside the conclusions they affect. Put tool-access gaps in maintenance records or delivery notes.
 
+For a multi-paper review, read [research-reviews.md](references/research-reviews.md). Select distinct, transferable mechanisms and honor the requested year, algorithm preference, paper count, heading language, and structure without lowering evidence standards to fill a quota.
+
 ## Make the Mechanism Legible
 
 - Advance one judgment per section and explain its relationship to the preceding section. Establish an understandable situation before introducing the terminology needed to address it.
@@ -28,7 +30,7 @@ Keep user instructions, execution plans, self-check results, and commentary abou
 
 Check original papers, fixed versions, and official implementations first. Keep citations near claims, including section or equation numbers when needed. Describe paper/code differences separately; abstracts, titles, and demonstrations cannot establish training details.
 
-Tell readers which relationship to inspect in a figure before using it to advance the explanation. For source figures, preserve local assets, figure numbers, authors, versions, provenance, and license information. Crop unrelated text while retaining labels, axes, and legends. Figures should serve the argument and cannot replace experimental controls.
+Tell readers which relationship to inspect in a figure before using it to advance the explanation. For source figures, preserve local assets, figure numbers, authors, versions, provenance, and license information. Crop unrelated text while retaining labels, axes, and legends. When clean original figures are requested, add no overlays, source labels, or image hyperlinks; keep paper references in the text or at the end and individual figure provenance in a separate asset record. Figures should serve the argument and cannot replace experimental controls.
 
 Read [editorial-patterns.md](references/editorial-patterns.md) as needed when using writing references. Learn how information is organized without copying voice, signature phrasing, or paragraphs. Choose techniques suited to the current article rather than mechanically combining every reference style.
 
