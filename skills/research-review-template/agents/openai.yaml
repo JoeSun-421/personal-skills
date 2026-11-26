@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Review Template"
+  short_description: "Build mechanism-grouped research reviews from a template"
+  default_prompt: "Use $research-review-template to expand my Markdown template into a source-faithful research review grouped by mechanism."
