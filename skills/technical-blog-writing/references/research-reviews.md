@@ -27,6 +27,12 @@ Explain original methods before proposing replacements. If adapting GRPO to PPO,
 
 Use only equations that clarify a decision, supervision signal or update. Define newly introduced symbols next to the equation, especially the set used for normalization. Separate allocated budgets from measured consumption, reasoning tokens from action tokens, and loss computation from environment sampling cost.
 
+## Reason from Partial Disclosures
+
+For restricted or closed models, separate what a system card reports, what a public interface makes observable, and what a proposed implementation would explain. When a reader asks for inference about training, give at least one concrete candidate with data, control signal and objective, then name an alternative and a discriminating observation. Explain remaining ambiguity and keep the proposal out of attribution to the model provider.
+
+For compute allocation, identify the decision granularity and owner. System routing, per-request effort, continuation or stopping during decode, and cross-turn state retention can all affect observed length. Record hard completion caps, effective tokens, cache behavior, and time separately. Where possible, compare modes at the same observation and model revision, then measure downstream success and total cost.
+
 ## Make Transfer Falsifiable
 
 For each paper, identify one mechanism worth transferring, the assumption that changes in the target setting, and a result that would falsify the transfer. Keep original empirical results inside their task and model scope. Source-heavy explanations should not end with unsupported claims that the target system already has the proposed capability.

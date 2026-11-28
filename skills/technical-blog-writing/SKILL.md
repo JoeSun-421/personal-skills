@@ -17,6 +17,12 @@ Keep user instructions, execution plans, self-check results, and commentary abou
 
 For a multi-paper review, read [research-reviews.md](references/research-reviews.md). Select distinct, transferable mechanisms and honor the requested year, algorithm preference, paper count, heading language, and structure without lowering evidence standards to fill a quota.
 
+## Research Abstract
+
+Write the abstract as a standalone research argument. Establish the capability or observation, name the unresolved question under explicit conditions, explain the sources or method used to examine it, then state the contribution and how a reader could test it. Give a concrete unit and endpoint, such as a pose-level decision and episode success under a latency constraint. For a review that proposes an experiment, use proposal verbs for unexecuted work. Avoid opening with an anecdote, writing a list of paper names as the method, or reporting anticipated gains as results.
+
+Before finalizing, read the abstract without its title or article. Check that the gap, comparison, intervention, and evaluation match what the body actually supplies. Reference strong primary-paper abstracts for argumentative structure and claim scope, without copying their phrasing.
+
 ## Make the Mechanism Legible
 
 - Advance one judgment per section and explain its relationship to the preceding section. Establish an understandable situation before introducing the terminology needed to address it.

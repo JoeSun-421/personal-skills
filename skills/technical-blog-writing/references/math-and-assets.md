@@ -16,6 +16,10 @@ Open the actual rendered output. Check math-element counts, error markers, lefto
 
 Delimiter checks and numerical calculations are supplements. Do not claim verified display without completing browser inspection.
 
+## Original Scientific Figures
+
+Use an original diagram when a proposed mechanism or experiment needs a visual explanation. Mark diagrams of proposed work as such. When plotting reported measurements, preserve the units, experimental setting, aggregation, and source location. Keep incomparable quantities on separate axes and avoid implying matched controls beyond the source. Retain the figure inputs and source in a companion provenance note, then inspect the actual article at desktop and mobile widths.
+
 ## Source Figures
 
 Keep source PDFs unchanged and use stable local relative paths for figure assets. Extract the figure content region, checking that labels are complete and data curves retain axes and legends.
