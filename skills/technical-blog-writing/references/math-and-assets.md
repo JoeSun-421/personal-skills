@@ -20,6 +20,12 @@ Delimiter checks and numerical calculations are supplements. Do not claim verifi
 
 Use an original diagram when a proposed mechanism or experiment needs a visual explanation. Mark diagrams of proposed work as such. When plotting reported measurements, preserve the units, experimental setting, aggregation, and source location. Keep incomparable quantities on separate axes and avoid implying matched controls beyond the source. Retain the figure inputs and source in a companion provenance note, then inspect the actual article at desktop and mobile widths.
 
+## Structure and Synthesis Diagrams
+
+Choose the visual form by the claim: use arrows for data or execution order, aligned panels for alternative architectures, a grid for independent training mechanisms, and a chart for quantitative evidence. In an architecture comparison, show the same observation and feedback boundary on both sides. Identify the unit of action and the owner of each decision. In a synthesis diagram, make the intended relationship explicit so adjacency does not imply a training sequence or shared implementation.
+
+Use short labels, consistent box and arrow meanings, and sufficient contrast. Check labels inside their containers and at phone width. Keep a source note for the specific paper sections or proposed experiment represented by each diagram. Captions should identify what to compare and whether a figure depicts a published system, sourced measurements, or a proposal.
+
 ## Source Figures
 
 Keep source PDFs unchanged and use stable local relative paths for figure assets. Extract the figure content region, checking that labels are complete and data curves retain axes and legends.

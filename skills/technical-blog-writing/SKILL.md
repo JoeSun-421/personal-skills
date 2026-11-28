@@ -38,6 +38,8 @@ Check original papers, fixed versions, and official implementations first. Keep 
 
 Tell readers which relationship to inspect in a figure before using it to advance the explanation. For source figures, preserve local assets, figure numbers, authors, versions, provenance, and license information. Crop unrelated text while retaining labels, axes, and legends. When clean original figures are requested, add no overlays, source labels, or image hyperlinks; keep paper references in the text or at the end and individual figure provenance in a separate asset record. Figures should serve the argument and cannot replace experimental controls.
 
+For a systems or methods review, plan an overview diagram, a structure or method comparison, and a figure that links training to evaluation when each resolves a distinct reading question. Place each at the first relevant explanation. Read [editorial-patterns.md](references/editorial-patterns.md) for the Claude research and engineering examples and [math-and-assets.md](references/math-and-assets.md) for diagram checks.
+
 Read [editorial-patterns.md](references/editorial-patterns.md) as needed when using writing references. Learn how information is organized without copying voice, signature phrasing, or paragraphs. Choose techniques suited to the current article rather than mechanically combining every reference style.
 
 ## Markdown to Blog

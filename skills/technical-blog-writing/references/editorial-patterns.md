@@ -2,6 +2,12 @@
 
 Review date: 2026-11-24. These are observations about the organization of specific articles and transferable techniques, not rules prescribed by their authors.
 
+## Claude Research and Engineering
+
+Read [Building effective agents](https://www.anthropic.com/research/building-effective-agents), [Tracing the thoughts of a large language model](https://www.anthropic.com/research/tracing-thoughts-language-model), and [Effective harnesses for long-running agents](https://www.anthropic.com/research/effective-harnesses-for-long-running-agents).
+
+Start with a concrete behavior or constraint. Introduce the smallest system that exhibits it, show the flow, then add components as each solves an observed failure or changes a measurable outcome. In a review, reuse the same visual vocabulary across systems so the difference is visible at the interface. Name the test that would distinguish competing explanations. Keep headlines and captions readable without the full article. Borrow the ordering and evidence habits while keeping the site's typography and writing original prose.
+
 ## Physical Intelligence — Task, Mechanism, Evidence
 
 Read: [Teaching Robots to Listen and Think Harder](https://www.pi.website/research/hirobot), [A VLA that Learns from Experience](https://www.pi.website/blog/pistar06).
